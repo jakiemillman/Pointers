@@ -16,6 +16,20 @@ int main()
     int* arr = new int[n];
     FillRand(arr, n);
     PrintArr(arr, n);
+    int value;
+    cout << "Введите значение добавляемого элемента: "; cin >> value;
+    int* arr1 = new int[n + 1];
+    for (int i = 0; i < n; i++)
+    {
+        arr1[i] = arr[i];
+    }
+    delete[]arr;
+    arr = arr1;
+    arr1 = nullptr;
+    arr[n] = value;
+    n++;
+    PrintArr(arr, n);
+
     delete[]arr;
 
 }
